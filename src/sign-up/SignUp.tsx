@@ -9,18 +9,24 @@ const SignUp = () => {
     }
 
     return (
-        
-       <form id="form-container" onSubmit={(e : any) => {sendRequest(e)}}>
+
+        <div id="signup-page">
+            <div id="mensage">
+                <h1>Sign Up</h1>
+            
+                <form id="form-container" onSubmit={(e : any) => {sendRequest(e)}}>
                     <div className="form-group">
                         <button type="submit"><i className="fa-solid fa-envelope"></i></button><input type="email" id="email" placeholder="Digite seu email" required />     
                     </div>
                     <div className="form-group">
                         <button type="submit"><i className="fa-solid fa-lock"></i></button><input type="password" id="password" placeholder="Digite sua senha" required />
                     </div>
-                
+                        
                     <button id="b-l" type="submit">Sign In</button>
 
                 </form>
+            </div>
+        </div>
     )
 }
 
