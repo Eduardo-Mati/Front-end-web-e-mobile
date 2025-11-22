@@ -1,13 +1,32 @@
 import { useNavigate } from 'react-router-dom';
 import './Login.css'
+import { useState } from 'react';
+
+
 
 export default function Login() {
   const navigation = useNavigate()
 
-  const sendRequest = (e : any) => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+  
+  const sendRequest = async(e : any) => {
     e.preventDefault()
-    navigation('/home')
-  } 
+    const response = await fetch('http://localhost:3000/api/user/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({email,password})
+        })
+        if(response.ok){
+            navigation('/home')
+        }else{
+            alert('Dados inválidos')
+        }
+    }
+
   const RegisterUser = (e : any) => {
     e.preventDefault()
     navigation('/signup')
@@ -27,10 +46,10 @@ export default function Login() {
                 <h5 id="textin">or use your email account</h5>
                 <form id="form-container" onSubmit={(e : any) => {sendRequest(e)}}>
                     <div className="form-group">
-                        <button type="submit"><i className="fa-solid fa-envelope"></i></button><input type="email" id="email" placeholder="Digite seu email" required />     
+                        <button type="submit"><i className="fa-solid fa-envelope"></i></button><input value={email} onChange={(e) => {setEmail(e.target.value)}} type="email" id="email" placeholder="Digite seu email" required />     
                     </div>
                     <div className="form-group">
-                        <button type="submit"><i className="fa-solid fa-lock"></i></button><input type="password" id="password" placeholder="Digite sua senha" required />
+                        <button type="submit"><i className="fa-solid fa-lock"></i></button><input value={password} onChange={(e) => {setPassword(e.target.value)}} type="password" id="password" placeholder="Digite sua senha" required />
                     </div>
                     <div className="form-actions">
             
