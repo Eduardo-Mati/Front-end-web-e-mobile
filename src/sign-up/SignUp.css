@@ -20,3 +20,9 @@
             text-align: center;
         }
 }
+#show-password{
+    border-radius: 0 10px 10px 0;
+}
+#password{
+    border-radius: 0 0 0 0;
+}
