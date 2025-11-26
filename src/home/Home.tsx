@@ -42,7 +42,7 @@ const Home = () => {
     const fetchProducts = async () => {
         try {
             // Ajuste a porta (ex: 3000, 5000) conforme seu server.js está rodando
-            const response = await fetch('http://localhost:3000/api/product'); // ou /api/products
+            const response = await fetch('http://localhost:3000/api/product'); 
             const data = await response.json();
             setProducts(data);
         } catch (error) {

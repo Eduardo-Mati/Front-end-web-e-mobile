@@ -2,9 +2,16 @@
     width: 100vw;
     height: 75vh;
 }
+#product-container{
+    display:contents;
+}
 .productZone{
     padding-left:40px;
     padding-right: 40px;
+    display: grid; 
+    /* Essa linha mágica cria colunas de no mínimo 250px. Se não couber, quebra linha */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; /* Espaço entre os cards */
         .produto {
             background-color: rgb(217, 217, 217);
             border: 1px solid #000000; /* Borda suave cinza */
@@ -38,19 +45,6 @@
             color: #333;
             font-weight: bold;
         }
-        display: grid; 
-        /* Essa linha mágica cria colunas de no mínimo 250px. Se não couber, quebra linha */
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
-        gap: 20px; /* Espaço entre os cards */
-
-
-
-
-
-
-
-
-
 }
 
 #home-bar {
