@@ -102,3 +102,56 @@
         
         }
 }
+@media (max-width: 768px) {
+    .homepage {
+        height: auto; /* Remove a altura fixa de 75vh */
+        min-height: 100vh;
+        padding-bottom: 20px;
+    }
+    .productZone {
+        flex-direction: column; /* Produtos um embaixo do outro */
+        align-items: center;
+    }
+
+    #home-bar {
+        position: relative; /* Deixa de ser absoluto para empurrar o conteúdo para baixo */
+        height: auto;       /* Altura automática para caber os itens empilhados */
+        flex-direction: column; /* Empilha Brand, Botoes e User um embaixo do outro */
+        padding: 15px 0;    /* Espaçamento interno */
+    }
+    #home-bar #brand {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    #home-bar #nav-buttons {
+        width: 100%;
+        flex-wrap: wrap; /* Se tiver muitos botões, eles podem quebrar linha */
+        margin-bottom: 15px;
+    }
+
+    #home-bar #nav-buttons button {
+        margin: 5px; /* Mais espaço entre os botões no toque */
+        width: 100px; /* Botões um pouco maiores para o dedo */
+    }
+
+    #home-bar #user-info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .productZone {
+        padding-left: 15px;  /* Reduz de 40px para 15px para ganhar espaço */
+        padding-right: 15px;
+        margin-top: 20px;    /* Espaço para descolar do menu */
+        
+        /* Em telas muito pequenas, força 1 coluna só */
+        grid-template-columns: 1fr; 
+    }
+    .productZone .produto img {
+        width: 100%;
+        height: 180px;
+    }
+
+}
