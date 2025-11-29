@@ -11,8 +11,8 @@ function Produtos({ image, name, description, price }: ProdutosProps) {
   return (
     <div className='produto'>
       <img src={image} alt={name} /> {/* Adicionei alt por boa prática */}
-      <h3>{name}</h3>
-      <p>{description}</p>
+      <p>{name}</p>
+      <h3>{description}</h3>
       <p>R$ {price}</p>
     </div>
   );
