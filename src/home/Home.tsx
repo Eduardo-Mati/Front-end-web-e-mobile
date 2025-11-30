@@ -41,7 +41,7 @@ const Home = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/product'); 
+            const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/product'); 
             const data = await response.json();
             setProducts(data);
         } catch (error) {
@@ -54,7 +54,7 @@ const Home = () => {
         e.preventDefault(); // Evita recarregar a página
 
         try {
-            const response = await fetch('http://localhost:3000/api/product/create', {
+            const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/product/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

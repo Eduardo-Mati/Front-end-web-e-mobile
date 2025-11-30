@@ -13,7 +13,7 @@ export default function Login() {
   
   const sendRequest = async(e : any) => {
     e.preventDefault()
-    const response = await fetch('http://localhost:3000/api/user/login', {
+    const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
