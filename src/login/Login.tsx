@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useState } from 'react';
-
+import Cookies from 'js-cookie';
 
 
 export default function Login() {
@@ -13,6 +13,7 @@ export default function Login() {
   
   const sendRequest = async(e : any) => {
     e.preventDefault()
+    //'http://localhost:3000/api/user/login'
     const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
@@ -20,6 +21,9 @@ export default function Login() {
         },
         body: JSON.stringify({email,password})
         })
+        const json = await response.json()
+        Cookies.set('token', json.token)
+
         if(response.ok){
             navigation('/home')
         }else{

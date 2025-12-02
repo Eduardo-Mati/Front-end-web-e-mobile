@@ -102,6 +102,18 @@
         
         }
 }
+.form-container{
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+#create-product-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
 @media (max-width: 768px) {
     .homepage {
         height: auto; /* Remove a altura fixa de 75vh */

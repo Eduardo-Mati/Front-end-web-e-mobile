@@ -12,6 +12,7 @@ const SignUp = () => {
      
     const sendRequest = async(e : any) => {
     e.preventDefault()
+    //'http://localhost:3000/api/user/register'
     const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/user/register', {
         method: 'POST',
         headers: {
@@ -20,6 +21,7 @@ const SignUp = () => {
         body: JSON.stringify({name,email,password,cpf})
         })
         if(response.ok){
+            alert('Cadastro realizado com sucesso!')
             navigation('/login')
         }else{
            alert('Não foi possível fazer o cadastro')
