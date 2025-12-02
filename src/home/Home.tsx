@@ -36,27 +36,25 @@ const Home = () => {
 
     // 1. Buscar produtos do Backend ao carregar a página
     useEffect(() => {
-        fetchProducts();
+        const fetchProducts = async () => {
+            try {
+                //'http://localhost:3000/api/product'
+                const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/product', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${Cookies.get('token')}`
+                    }
+                },
+                );
+                const data = await response.json();
+                setProducts(data);
+            } catch (error) {
+                console.error("Erro ao buscar produtos:", error);
+            }
+            fetchProducts();
+        };
     }, []);
-
-    const fetchProducts = async () => {
-        try {
-            //'http://localhost:3000/api/product'
-            const response = await fetch('https://front-end-web-e-mobile-backend.onrender.com/api/product', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${Cookies.get('token')}`
-                }
-            },
-            );
-            const data = await response.json();
-            setProducts(data);
-        } catch (error) {
-            console.error("Erro ao buscar produtos:", error);
-        }
-    };
-
     
     const handleCreateProduct = async (e: FormEvent) => {
         e.preventDefault(); 
