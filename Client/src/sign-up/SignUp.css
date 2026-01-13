@@ -1,0 +1,78 @@
+#signup-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        #mensage{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            text-align: center;
+        }
+}
+
+#email, #password,#name,#cpf {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    height: 20px;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 0;
+}
+
+#show-password{
+    border-radius: 0 10px 10px 0;
+}
+#password{
+    border-radius: 0 0 0 0;
+}
+@media (max-width: 768px) {
+
+    #signup-page {
+        height: auto; /* Permite rolar a tela se o teclado abrir */
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+
+    /* Ajusta o container branco da mensagem/form */
+    #signup-page #mensage {
+        width: 90vw; /* Ocupa 90% da largura da tela */
+        padding: 20px 10px; /* Reduz padding lateral */
+        margin: 0 auto;
+    }
+
+    /* Garante que o form ocupe espaço total */
+    #form-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajusta os inputs e botões para caberem na tela */
+    .form-group {
+        width: 100% !important; /* Substitui regras herdadas ou fixas */
+        max-width: 350px; /* Evita que fique largo demais em tablets */
+    }
+
+    .form-group input {
+        width: 100%;
+        min-width: 0; /* Evita overflow em flexbox */
+    }
+
+    /* Ajuste específico para o botão de mostrar senha não quebrar linha */
+    #show-password {
+        width: 50px; /* Garante um tamanho fixo para o olho */
+        flex-shrink: 0; /* Impede que o botão seja esmagado */
+    }
+}

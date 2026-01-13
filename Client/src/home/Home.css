@@ -1,0 +1,169 @@
+.homepage{
+    width: 100vw;
+    height: 75vh;
+}
+#product-container{
+    display:contents;
+}
+.productZone{
+    padding-left:40px;
+    padding-right: 40px;
+    display: grid; 
+    /* Essa linha mágica cria colunas de no mínimo 250px. Se não couber, quebra linha */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; /* Espaço entre os cards */
+        .produto {
+            background-color: rgb(217, 217, 217);
+            border: 1px solid #000000; /* Borda suave cinza */
+            border-radius: 8px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column; /* Organiza imagem, titulo e preço um embaixo do outro */
+            justify-content: space-between; /* Distribui o espaço */
+            transition: box-shadow 0.3s ease;
+            overflow: hidden; /* Garante que nada saia de dentro do quadrado */
+        }
+        .produto:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* Sombra destaca ao passar o mouse */
+            cursor: pointer;
+        }
+        .produto img {
+            width: 200px;
+            height: 200px; /* Altura fixa para todas as imagens ficarem iguais */
+            object-fit: contain; /* 'contain' mostra a foto inteira (comum em e-commerce). Use 'cover' se quiser preencher tudo */
+            margin-bottom: 10px;
+            margin-left: 25px;
+        }
+        .produto h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+        .produto p {
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+}
+
+#home-bar {
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: #08979F;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        #brand{
+            width: 10%;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            margin-left: 20px;
+        }
+
+        #nav-buttons{
+            width: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            button{
+                margin: 0 10px;
+                padding: 5px 10px;
+                border: 1px solid white;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: bold;
+                color: #fff;
+                background-color: transparent;
+            }
+        }
+
+        #user-info{
+            width: 15%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+                button{
+                    margin-right: 3%;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+                    padding: 0 !important;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+        
+        }
+}
+.form-container{
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+#create-product-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+}
+@media (max-width: 768px) {
+    .homepage {
+        height: auto; /* Remove a altura fixa de 75vh */
+        min-height: 100vh;
+        padding-bottom: 20px;
+    }
+    .productZone {
+        flex-direction: column; /* Produtos um embaixo do outro */
+        align-items: center;
+    }
+
+    #home-bar {
+        position: relative; /* Deixa de ser absoluto para empurrar o conteúdo para baixo */
+        height: auto;       /* Altura automática para caber os itens empilhados */
+        flex-direction: column; /* Empilha Brand, Botoes e User um embaixo do outro */
+        padding: 15px 0;    /* Espaçamento interno */
+    }
+    #home-bar #brand {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+    #home-bar #nav-buttons {
+        width: 100%;
+        flex-wrap: wrap; /* Se tiver muitos botões, eles podem quebrar linha */
+        margin-bottom: 15px;
+    }
+
+    #home-bar #nav-buttons button {
+        margin: 5px; /* Mais espaço entre os botões no toque */
+        width: 100px; /* Botões um pouco maiores para o dedo */
+    }
+
+    #home-bar #user-info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .productZone {
+        padding-left: 15px;  /* Reduz de 40px para 15px para ganhar espaço */
+        padding-right: 15px;
+        margin-top: 20px;    /* Espaço para descolar do menu */
+        
+        /* Em telas muito pequenas, força 1 coluna só */
+        grid-template-columns: 1fr; 
+    }
+    .productZone .produto img {
+        width: 100%;
+        height: 180px;
+    }
+
+}
