@@ -9,9 +9,13 @@ Um sistema de e-commerce completo desenvolvido para praticar a integração entr
 
 ## 🌐 Deploy (Acesse o projeto online)
 
-https://front-end-web-e-mobile.vercel.app/
+Clique abaixo para testar a aplicação rodando em tempo real:
 
-obs: o banco de dados está presente no render que é uma ferramenta gratuita que apresenta o cold start onde demora um pouco para a requisição funcionar na primeira interação
+### 🔗 [Acessar Loja Virtual (Vercel)](https://front-end-web-e-mobile.vercel.app/)
+
+> **⚠️ Atenção (Cold Start):**
+> O backend desta aplicação está hospedado no plano gratuito do **Render**. Por isso, a aplicação entra em modo de suspensão após inatividade.
+> **A primeira requisição (login ou carregar produtos) pode levar cerca de 1 minuto ou mais para responder.** Por favor, aguarde o servidor "acordar".
 ---
 
 ## 🛠 Tecnologias Utilizadas
