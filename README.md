@@ -49,8 +49,3 @@ O projeto foi dividido em duas partes principais (Monorepo):
 - [x] **Interface Responsiva:** Adaptável para mobile e desktop.
 - [x] **Integração Front-Back:** Conexão via Fetch/Axios.
 
----
-
-## 📂 Estrutura do Projeto
-
-Este repositório opera como um monorepo:
