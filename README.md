@@ -11,7 +11,7 @@ Um sistema de e-commerce completo desenvolvido para praticar a integração entr
 
 Clique abaixo para testar a aplicação rodando em tempo real:
 
-### 🔗 [Acessar Loja Virtual (Vercel)](https://front-end-web-e-mobile.vercel.app/)
+### 🔗 https://front-end-web-e-mobile.vercel.app/
 
 > **⚠️ Atenção (Cold Start):**
 > O backend desta aplicação está hospedado no plano gratuito do **Render**. Por isso, a aplicação entra em modo de suspensão após inatividade.
